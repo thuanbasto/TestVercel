@@ -1,0 +1,69 @@
+---
+alwaysApply: true
+---
+
+### Startup Workflow (Each Session)
+1. Read `docs/01_plan/project-roadmap.md` for current sprint status
+2. Reference `docs/00_context/requirements.md` for business context  
+3. Follow `docs/00_context/implementation-guide.md` for tech decisions
+
+### Development Process
+Task Lifecycle:
+1. Identify current sprint task from roadmap
+2. Implement feature following SRS specifications
+3. MANDATORY: Write/update tests for new features
+4. Validate against NFR requirements (≤30s response, security, etc.)
+5. Update sprint progress only when tests pass
+6. Commit with clear message
+7. Update roadmap status
+
+Quality Gates:
+- All API endpoints must match SRS specification exactly
+- No image storage on server (stream processing only)
+- Rate limiting must be configurable via environment/database
+- Credit transactions must support hold/commit/refund pattern
+- All sensitive operations need idempotency keys
+
+### SRS Compliance Rules
+- FR-4: Never implement image storage - process and return streams only
+- NFR Performance: Gemini API calls must timeout at 30s max  
+- NFR Security: No PII logging, HTTPS only, device hash for identification
+- Database schema must match exactly: styles, wallets, transactions, settings tables
+
+### Documentation Rules
+- Update sprint progress daily
+- Link to specific SRS sections when implementing features
+- Keep technical decisions documented in implementation-guide.md
+- Never modify requirements.md without explicit approval### Startup Workflow (Each Session)
+1. Read `docs/01_plan/project-roadmap.md` for current sprint status
+2. Reference `docs/00_context/requirements.md` for business context  
+3. Follow `docs/00_context/implementation-guide.md` for tech decisions
+
+### Development Process
+Task Lifecycle:
+1. Identify current sprint task from roadmap
+2. Implement feature following SRS specifications
+3. MANDATORY: Write/update tests for new features
+4. Validate against NFR requirements (≤30s response, security, etc.)
+5. Update sprint progress only when tests pass
+6. Commit with clear message
+7. Update roadmap status
+
+Quality Gates:
+- All API endpoints must match SRS specification exactly
+- No image storage on server (stream processing only)
+- Rate limiting must be configurable via environment/database
+- Credit transactions must support hold/commit/refund pattern
+- All sensitive operations need idempotency keys
+
+### SRS Compliance Rules
+- FR-4: Never implement image storage - process and return streams only
+- NFR Performance: Gemini API calls must timeout at 30s max  
+- NFR Security: No PII logging, HTTPS only, device hash for identification
+- Database schema must match exactly: styles, wallets, transactions, settings tables
+
+### Documentation Rules
+- Update sprint progress daily
+- Link to specific SRS sections when implementing features
+- Keep technical decisions documented in implementation-guide.md
+- Never modify requirements.md without explicit approval
